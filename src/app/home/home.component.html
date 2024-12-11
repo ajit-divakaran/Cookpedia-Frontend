@@ -1,0 +1,120 @@
+<app-header></app-header>
+
+<div class="container">
+  <div class="row bg-success p-5 d-flex justify-content-center">
+    <div class="col-md-2"></div>
+    <div class="col-md-4 col-12">
+      <h1 class="text-light">
+        The Easiest Way<br />
+        To Make Your<br />
+        Favourite Meal
+      </h1>
+
+      <p class="text-light mt-4">
+        Discover 100+ recipes in your habd with the best recipes. Help you to
+        find the easiest way to cook
+      </p>
+      <button class="btn btn-warning mt-4">Explore Recipe</button>
+    </div>
+    <div class="col-md-6 col-12">
+      <img class="landingImg" src="home-plate.png" alt="" class="w-100" />
+    </div>
+  </div>
+
+  <div class="row my-5">
+    <h1>Popular Recipe of the week</h1>
+    <div class="d-flex justify-content-between">
+      <p>Our most popular recipes of the week</p>
+      <a routerLink="/recipes">View all</a>
+    </div>
+    <div class="d-flex justify-content-center">
+      <div class="row">
+        @if(allRecipes.length>0){
+          @for(item of allRecipes; track $index){<div class="col-md-4 border w-auto mx-5">
+          <img
+            [src]= "item.image"
+            class="w-100"
+            alt=""
+            height="200px"
+            (click)="viewRecipe(item._id)"
+          />
+          <p class="text-center">{{item.name}}</p>
+        </div>}
+      }
+        @else{
+
+          <h2>No items to show</h2>
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="row banner p-4 my-4">
+    <div class="bg-light my-2 ms-5 p-4" style="width: 260px">
+      <h1 class="fs-2">50+ Recipes That are very Quick And Fast</h1>
+      <p>
+        Find the perfect food ideas to start your day with the quick and easiest
+        way
+      </p>
+    </div>
+  </div>
+
+  <div class="row py-5 mt-5 mb-5 bg-success text-light">
+    <div class="col-md-7 d-flex justify-content-center">
+      <img src="Download-image-home.png" alt="" width="75%" />
+    </div>
+    <div class="col-md-5">
+      <h1>Download App</h1>
+      <p>
+        Download the app from App store or Google Play for better Experience
+      </p>
+      <div class="d-flex gap-5" style="height: 80px">
+        <img
+          src="https://cdn.pixabay.com/photo/2021/09/22/16/07/google-play-6647242_1280.png"
+          alt=""
+          width="35%"
+        />
+        <img
+          src="https://logos-world.net/wp-content/uploads/2021/02/App-Store-Symbol.png"
+          alt=""
+          width="30%"
+          style="transform: scale(1.2)"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- testimonial -->
+  <div class="row">
+    <h2>Testimonials</h2>
+    <div class="col-md-4">
+      <div class="card my-3 shadow-lg">
+        <div class="card-body">
+          <h5 class="card-title">Testimonial 1</h5>
+          <p class="card-text">
+         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum rem minus voluptatum natus explicabo corrupti! Dolores harum doloremque eligendi id alias velit placeat adipisci quidem!
+          </p>
+       
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">      <div class="card my-3 shadow-lg">
+        <div class="card-body">
+          <h5 class="card-title">Testimonial 1</h5>
+          <p class="card-text">
+         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum rem minus voluptatum natus explicabo corrupti! Dolores harum doloremque eligendi id alias velit placeat adipisci quidem!
+          </p>
+       
+        </div>
+      </div></div>
+    <div class="col-md-4">      <div class="card my-3 shadow-lg">
+        <div class="card-body">
+          <h5 class="card-title">Testimonial 1</h5>
+          <p class="card-text">
+         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum rem minus voluptatum natus explicabo corrupti! Dolores harum doloremque eligendi id alias velit placeat adipisci quidem!
+          </p>
+       
+        </div>
+      </div></div>
+  </div>
+</div>

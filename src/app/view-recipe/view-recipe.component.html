@@ -1,0 +1,68 @@
+<app-header></app-header>
+<div class="container border border-dark my-5">
+  <div class="row p-2">
+    <div class="col-md-6">
+      <div class="mb-4 ms-2">
+        <a routerLink="/recipes">Back to all Recipes</a>
+      </div>
+      <div>
+        <img
+          [src]="Recipe.image"
+          alt="no image"
+          width="100%"
+        />
+      </div>
+      <div class="d-flex justify-content-between mt-5">
+        <button (click)="downloadRecipe()" class="btn btn-success">Download Recipe</button>
+        <button (click)="savedRecipes()" class="btn btn-primary">Save recipe</button>
+      </div>
+    </div>
+    <div class="col-md-6">
+        <h1>{{Recipe.name}}</h1>
+        <div class="d-flex justify-content-between mt-5">
+            <p class="fw-bolder">Cuisine:{{Recipe.cuisine}} </p>
+            <p class="fw-bolder">Serving:{{Recipe.servings}} </p>
+            <p class="fw-bolder">Mode of Cooking:{{Recipe.difficulty}} </p>
+        </div>
+        <div class="d-flex justify-content-evenly mt-4">
+            <div class="d-flex flex-column align-items-center">
+                <img src="https://img.freepik.com/premium-vector/wall-clock-logo-icon_414847-367.jpg" alt="" width="70px">
+                <p>Preparation Time</p>
+                <h5><span class="text-danger">{{Recipe.prepTimeMinutes}}</span> minutes</h5>
+            </div>
+            <div class="d-flex flex-column align-items-center">
+                <img src="https://cdn.icon-icons.com/icons2/2622/PNG/512/food_cooking_icon_158561.png" alt="" width="70px">
+                <p>Cooking Time</p>
+                <h5><span class="text-danger">{{Recipe.cookTimeMinutes}}</span> minutes</h5>
+            </div>
+            <div class="d-flex flex-column align-items-center">
+                <img src="https://icon-library.com/images/icon-cooking/icon-cooking-14.jpg" alt="" width="70px">
+                <p>Calories per Serving</p>
+                <h5><span class="text-danger">{{Recipe.caloriesPerServing}}</span> cal</h5>
+            </div>
+        </div>
+        <div class="mt-5">
+            <h3>Ingredients Needed</h3>
+            <ol>
+                @for(item of Recipe.ingredients; track $index){<li>{{item}}</li>}
+            </ol>
+        </div>
+        <div class="mt-5">
+            <h3>Cooking Instructions</h3>
+            <ol>
+                @for(item of Recipe.ingredients; track $index)
+                {<li>{{item}}</li>}
+            </ol>
+        </div>
+
+    </div>
+  </div>
+
+  <div class="row my-5">
+    <h1 class="mb-4">Related recipes</h1>
+  @for(item of Rrecipes; track $index){  <div class="col-md-3" [hidden]="item._id == Recipe._id">
+        <img [src]="item.image" alt="" width="100%">
+        <p class="mt-1 ">{{item.name}}</p>
+    </div>}
+  </div>
+</div>

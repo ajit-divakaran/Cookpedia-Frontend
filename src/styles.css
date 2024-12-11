@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    padding:0;
+    margin:0;
+    font-family: "Rubik", sans-serif;
+    word-spacing: 0.1rem;
+    font-style: normal;
+}
+
+.landingImg:hover{
+    animation: rot 2.4s infinite;
+    /* transition: 5.5s */
+}
+@keyframes rot {
+
+    0% { transform: rotate(0deg); }
+    5% { transform: rotate(18deg); }
+    10% { transform: rotate(36deg); }
+    15% { transform: rotate(54deg); }
+    20% { transform: rotate(72deg); }
+    25% { transform: rotate(90deg); }
+    30% { transform: rotate(108deg); }
+    35% { transform: rotate(126deg); }
+    40% { transform: rotate(144deg); }
+    45% { transform: rotate(162deg); }
+    50% { transform: rotate(180deg); }
+    55% { transform: rotate(198deg); }
+    60% { transform: rotate(216deg); }
+    65% { transform: rotate(234deg); }
+    70% { transform: rotate(252deg); }
+    75% { transform: rotate(270deg); }
+    80% { transform: rotate(288deg); }
+    85% { transform: rotate(306deg); }
+    90% { transform: rotate(324deg); }
+    95% { transform: rotate(342deg); }
+    100% { transform: rotate(360deg);}
+
+
+}
+
+.banner{
+    background-image:url('https://img.freepik.com/free-photo/tasty-pizza-near-ingredients_23-2147772080.jpg?ga=GA1.1.435052462.1729684162&semt=ais_hybrid')
+}
