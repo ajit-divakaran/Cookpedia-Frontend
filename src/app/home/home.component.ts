@@ -12,11 +12,13 @@ import { ApiService } from '../services/api.service';
 })
 export class HomeComponent implements OnInit {
   allRecipes:any[]=[]
+  allFeedbacks:any[]=[]
   // recipe_id:any = ""
   constructor(private api:ApiService,private router:Router){}
 
   ngOnInit(): void {
     this.getAllRecipes()
+    this.getApprovedMessage()
   }
 
   getAllRecipes(){
@@ -37,5 +39,12 @@ viewRecipe(id:string){
   console.log(id)
     this.router.navigateByUrl(`/view-recipe/${id}`)
   }
+}
+
+getApprovedMessage(){
+  this.api.getAllApprovedTestimonialsAPI().subscribe((res:any)=>{
+    this.allFeedbacks =res;
+    console.log(res)
+  })
 }
 }

@@ -87,34 +87,17 @@
   <!-- testimonial -->
   <div class="row">
     <h2>Testimonials</h2>
-    <div class="col-md-4">
-      <div class="card my-3 shadow-lg">
+@for(item of allFeedbacks ;track $index; let i=$index){    <div class="col-md-4">
+      <div class="card h-75 my-3 shadow-lg">
         <div class="card-body">
-          <h5 class="card-title">Testimonial 1</h5>
+          <h5 class="card-title">Testimonial {{i+1}}</h5>
           <p class="card-text">
-         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum rem minus voluptatum natus explicabo corrupti! Dolores harum doloremque eligendi id alias velit placeat adipisci quidem!
+         {{item.message}}
           </p>
        
         </div>
       </div>
-    </div>
-    <div class="col-md-4">      <div class="card my-3 shadow-lg">
-        <div class="card-body">
-          <h5 class="card-title">Testimonial 1</h5>
-          <p class="card-text">
-         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum rem minus voluptatum natus explicabo corrupti! Dolores harum doloremque eligendi id alias velit placeat adipisci quidem!
-          </p>
-       
-        </div>
-      </div></div>
-    <div class="col-md-4">      <div class="card my-3 shadow-lg">
-        <div class="card-body">
-          <h5 class="card-title">Testimonial 1</h5>
-          <p class="card-text">
-         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum rem minus voluptatum natus explicabo corrupti! Dolores harum doloremque eligendi id alias velit placeat adipisci quidem!
-          </p>
-       
-        </div>
-      </div></div>
+    </div>}
+
   </div>
 </div>

@@ -65,6 +65,33 @@ export class ApiService {
       return this.http.post(`${this.serverUrl}/edit-user`,reqBody, this.appendToken())
 
     }
+
+    allUsersAPI(){
+      return this.http.get(`${this.serverUrl}/all-users`, this.appendToken())
+    }
+
+
+    allDownloadListAPI(){
+      return this.http.get(`${this.serverUrl}/download-list`, this.appendToken())
+    }
     
+    getallFeedbackListAPI(){
+      return this.http.get(`${this.serverUrl}/all-feedback`, this.appendToken())
+
+    }
+
+    updateFeedbackStatusAPI(feedBackId:string,status:string){
+      return this.http.get(`${this.serverUrl}/feedback/${feedBackId}/update?status=${status}`, this.appendToken())
+    }
+
+    getAllApprovedTestimonialsAPI(){
+      return this.http.get(`${this.serverUrl}/approved-feedback`, this.appendToken())
+
+    }
+
+    addRecipeAPI(reqBody:any){
+      return this.http.post(`${this.serverUrl}/add-recipe`,reqBody, this.appendToken())
+ 
+    }
 
 }

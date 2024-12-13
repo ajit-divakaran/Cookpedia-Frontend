@@ -11,6 +11,8 @@ import { PagenotFoundComponent } from './pagenot-found/pagenot-found.component';
 import { ProfileComponent } from './profile/profile.component';
 
 export const routes: Routes = [
+    // lazy loading routing
+    {path:'admin', loadChildren:()=>import('./admin/admin.module').then(m=>m.AdminModule)},
     {path:'', component:HomeComponent,title:'Home Page'},
     {path:'login', component:LoginComponent,title:'Login page'},
     {path:'register', component:RegisterComponent},

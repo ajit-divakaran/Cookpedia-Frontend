@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2 p-0">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-lg-10">
+            <h1 class="text-center my-3">All Recipes List</h1>
+            <div class="d-flex justify-content-between mb-5 mt-1">
+                <button routerLink = "/admin/recipe/add"class="btn btn-primary">+ Add New Recipe</button>
+                <input [(ngModel)]="searchRecipe" placeholder="Search by name" type="text" class="form-control w-25">
+            </div>
+            <table class="table">
+                <thead class="table-primary">
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Cuisine</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @for(recipe of allRecipes | search:searchRecipe; track $index; let i=$index){<tr>
+                        <td>{{i+1}}</td>
+                        <td>{{recipe.name}}</td>
+                        <td><img [src]="recipe.image" alt="" class="w-25"></td>
+                        <td>{{recipe.cuisine}}</td>
+                        <td>
+                            <button routerLink="/admin/recipe/{{recipe._id}}/edit" class="btn me-2">
+                                <i class="fa-solid fa-edit text-primary"></i>
+                            </button>
+                            <button  class="btn me-2">
+                                <i class="fa-solid fa-trash "></i>
+                            </button>
+                        </td>
+                    </tr>}
+                    @if((allRecipes | search: searchRecipe).length==0){
+                        <tr class="text-danger fw-bolder fs-3">
+                            Recipe not found !!!
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<p>recipe-list works!</p>
