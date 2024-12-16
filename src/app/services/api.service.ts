@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { RecipeModel } from '../admin/model/recipeModel';
 
 @Injectable({
   providedIn: 'root'
@@ -94,4 +95,14 @@ export class ApiService {
  
     }
 
+    updateRecipeAPI(id:string,reqBody:RecipeModel){
+      return this.http.put(`${this.serverUrl}/recipe/${id}/edit`,reqBody, this.appendToken())
+ 
+    }
+
+
+    deleteRecipeAPI(id:string){
+      return this.http.delete(`${this.serverUrl}/recipe/${id}/remove`, this.appendToken())
+ 
+    }
 }
